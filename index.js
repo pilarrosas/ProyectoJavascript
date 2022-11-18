@@ -32,35 +32,12 @@ function agregar() {
     alert("Por favor ingrese un número válido asignado al producto");
     respuesta = parseInt(prompt(catalogo));
   }
-  while (respuesta != 6) {
-    switch (respuesta) {
-      case 0:
-        carritoDeCompras.push(producto[0]);
-        alert(`${producto[0].modelo} agregado exitosamente`);
-        break;
-      case 1:
-        carritoDeCompras.push(producto[1]);
-        alert(`${producto[1].modelo} agregado exitosamente`);
-        break;
-      case 2:
-        carritoDeCompras.push(producto[2]);
-        alert(`${producto[2].modelo} agregado exitosamente`);
-        break;
-      case 3:
-        carritoDeCompras.push(producto[3]);
-        alert(`${producto[3].modelo} agregado exitosamente`);
-        break;
-      case 4:
-        carritoDeCompras.push(producto[4]);
-        alert(`${producto[4].modelo} agregado exitosamente`);
-        break;
-      case 5:
-        carritoDeCompras.push(producto[5]);
-        alert(`${producto[5].modelo} agregado exitosamente`);
-        break;
-      default:
-        alert("Por favor ingrese un número válido asignado al producto");
-        break;
+  while (respuesta != 6) { 
+
+    let buscar = producto.find(e => e.iD == respuesta)
+    if (buscar != undefined) {
+      carritoDeCompras.push(buscar)
+      alert(`${buscar.modelo} agregado exitosamente`);
     }
     respuesta = parseInt(prompt(catalogo));
   }
