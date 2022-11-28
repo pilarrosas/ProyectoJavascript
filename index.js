@@ -57,7 +57,6 @@ botonCompra.forEach(boton => {
         }
         localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
     }
-    
 })
 
 const miCarrito = document.querySelector("#miCarrito");
@@ -67,6 +66,7 @@ miCarrito.onclick = () => {
     valor.forEach(valores => {
         totalCompra += valores
     })
-    
+    console.log(totalCompra)
+    alert(valor)
 }
 
