@@ -1,4 +1,17 @@
-
+#totalFinal {
+	color: #000000;
+	margin-left: 45%;
+	font-size: 20px;
+}
+.precios {
+	margin-left: 50px;
+}
+.cart_menu {
+	color: #000000;
+}
+.disabled {
+	display: none;
+}
 body {
 	font-family:Roboto;
 	font-weight:300;

@@ -7,7 +7,7 @@ class celulares {
             this.memoria = memoria,
             this.precio = precio,
             this.imagen = imagen
-            
+
     }
 }
 
@@ -23,10 +23,10 @@ const productosFrente = document.getElementById("productosFrente");
 
 producto.forEach(prodArray => {
     productosFrente.innerHTML += `
-    <div id=producto ${prodArray.id} class="col-md-4">
-    <div class="productbox">
+    <div class="col-md-4">
+    <div id=${prodArray.id} class="productbox">
         <div class="fadeshop">
-        <span class="maxproduct"><img src=${prodArray.imagen} alt="galaxy8" style="height: 250px; width: 220px; margin-left: 55px"></span>
+        <span class="maxproduct"><img src=${prodArray.imagen} alt="galaxy8" style="height: 250px; width: 220px; margin-left: 75px"></span>
         </div>
         <div class="product-details">
         <h3>${prodArray.modelo}</h3>
@@ -34,29 +34,42 @@ producto.forEach(prodArray => {
         <p>Camaras: ${prodArray.cantidadCamara}</p>
         <p>Memoria Interna de: ${prodArray.memoria}</p>
         <p>Precio: uSd ${prodArray.precio}</p>
-        <button id="${prodArray.id}" type="button" class="btn btn-info">Comprar</button>
+        <button id="${prodArray.id}" type="button" class="btn btn-info">Agregar</button>
         </div>
     </div>
 </div>
     `
-})
+});
 
-const carritoDeCompras = JSON.parse(localStorage.getItem("carritoDeCompras")) || [];
-console.log(carritoDeCompras)
-const botonCompra = document.querySelectorAll(".btn-info");
+
+let botonCompra = document.querySelectorAll(".btn-info");
+const numerito = document.querySelector("#numerito")
+
+let carritoDeCompras;
+let carritoDeComprasLS = localStorage.getItem("carritoDeCompras")
+
+if (carritoDeComprasLS) {
+    carritoDeCompras = JSON.parse(carritoDeComprasLS)
+    actualizarNumerito()
+} else {
+    carritoDeCompras = []
+}
 
 botonCompra.forEach(boton => {
     boton.onclick = () => {
         const totalCarrito = producto.find(prod => prod.id === parseInt(boton.id));
         const productosCarrito = { ...totalCarrito, cantidad: 1 };
-        const indexCarrito = carritoDeCompras.findIndex(prod => prod.id === carritoDeCompras.id);
+        const indexCarrito = carritoDeCompras.findIndex((prod) => prod.id === productosCarrito.id);
         if (indexCarrito === -1) {
             carritoDeCompras.push(productosCarrito)
-        } else {
+        }
+        else {
             carritoDeCompras[indexCarrito].cantidad++
         }
+        actualizarNumerito() 
         localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
-    }
+        console.log(carritoDeCompras)
+}
 })
 
 const miCarrito = document.querySelector("#miCarrito");
@@ -70,3 +83,7 @@ miCarrito.onclick = () => {
     alert(valor)
 }
 
+function actualizarNumerito() {
+    let nuevoNumerito = carritoDeCompras.reduce((acc, producto) => acc + producto.cantidad, 0);
+    numerito.innerText = nuevoNumerito
+}

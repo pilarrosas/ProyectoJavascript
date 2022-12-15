@@ -5,13 +5,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="generator" content="">
+	<!-- CSS only -->
+
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,600,700" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -30,7 +32,6 @@
 					<div id="navbar-collapse-02" class="collapse navbar-collapse">
 						<ul class="nav navbar-nav navbar-right">
 							<li class="propClone"><a href="./index2.html">Home</a></li>
-							<li class="propClone"><a href="./productos.html">Productos</a></li>
 							<li class="propClone"><a href="./checkout.html">Carrito</a></li>
 							<li class="propClone"><a href="./contact.html">Contacto</a></li>
 						</ul>
@@ -86,27 +87,14 @@
 			</div>
 		</div>
 	</div>
-	<section class="item content">
-		<div class="container">
-			<div class="underlined-title">
-				<div class="editContent">
-					<h1 class="text-center latestitems">Agregados Recientemente</h1>
-				</div>
-				<div class="wow-hr type_short">
-					<span class="wow-hr-h">
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-						<i class="fa fa-star"></i>
-					</span>
-				</div>
-			</div>
-			<div id="productosFrente" class="row">
-				<!-- <button id="botonCompra" type="button" class="btn btn-info">Comprar</button> -->
-			</div>
+	<div id="productosFrente" class="row">
+		<!-- <button id="botonCompra" type="button" class="btn btn-info">Comprar</button> -->
+	</div>
 	</section>
 	<div class="item content">
 		<div class="container text-center">
-			<a id="miCarrito"  class="homebrowseitems">Mi Carrito de Compras
+			<a href="./checkout.html" id="miCarrito"  class="homebrowseitems">Mi Carrito de Compras
+				<span id="numerito" class="numerito" style="margin-left: 10px;">  0</span>
 				<div  class="homebrowseitemsicon">
 					<i class="fa fa-star fa-spin"></i>
 				</div>
@@ -118,7 +106,6 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<i class="fa fa-microphone infoareaicon"></i>
 					<div class="infoareawrap">
 						<h1 class="text-center subtitle">Preguntas?</h1>
 						<p>
@@ -132,7 +119,6 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-					<i class="fa fa-comments infoareaicon"></i>
 					<div class="infoareawrap">
 						<h1 class="text-center subtitle">Soporte Técnico</h1>
 						<p>
@@ -145,7 +131,6 @@
 					</div>
 				</div>
 				<div class="col-md-4">
-					<i class="fa fa-bullhorn infoareaicon"></i>
 					<div class="infoareawrap">
 						<h1 class="text-center subtitle">Talentos</h1>
 						<p>
@@ -161,51 +146,56 @@
 		</div>
 	</div>
 	<section>
-	<div class="container2">
-		<div class="login-container">
-			<input id="item-1" type="radio" name="item" class="sign-in" checked><label for="item-1" class="item">Ingresar</label>
-			<input id="item-2" type="radio" name="item" class="sign-up"><label for="item-2" class="item">Registrarse</label>
-			<div class="login-form">
-				<div class="sign-in-htm">
-					<div class="group">
-						<input placeholder="Usuario" id="user" type="text" class="input">
-					</div>
-					<div class="group">
-						<input placeholder="Contraseña" id="pass" type="password" class="input" data-type="password">
-					</div>
+		<div class="container2">
+			<div class="login-container">
+				<input id="item-1" type="radio" name="item" class="sign-in" checked><label for="item-1"
+					class="item">Ingresar</label>
+				<input id="item-2" type="radio" name="item" class="sign-up"><label for="item-2"
+					class="item">Registrarse</label>
+				<div class="login-form">
+					<div class="sign-in-htm">
+						<div class="group">
+							<input placeholder="Usuario" id="user" type="text" class="input">
+						</div>
+						<div class="group">
+							<input placeholder="Contraseña" id="pass" type="password" class="input"
+								data-type="password">
+						</div>
 
-					<div class="group">
-						<input type="submit" class="button2" value="Ingresar">
+						<div class="group">
+							<input type="submit" class="button2" value="Ingresar">
+						</div>
+						<div class="hr"></div>
+						<div class="footer2">
+							<a href="#forgot">Olvidé mi Contraseña</a>
+						</div>
 					</div>
-					<div class="hr"></div>
-					<div class="footer2">
-						<a href="#forgot">Olvidé mi Contraseña</a>
+					<div class="sign-up-htm">
+						<div class="group">
+							<input placeholder="Nombre de Usuario" id="user" type="text" class="input">
+						</div>
+
+						<div class="group">
+							<input placeholder="Email" id="pass" type="text" class="input">
+						</div>
+
+						<div class="group">
+							<input placeholder="Contraseña" id="pass" type="password" class="input"
+								data-type="password">
+						</div>
+						<div class="group">
+							<input placeholder="Repetir Contraseña" id="pass" type="password" class="input"
+								data-type="password">
+						</div>
+
+						<div class="group">
+							<input type="submit" class="button2" value="Registrarse">
+						</div>
+						<div class="hr"></div>
 					</div>
 				</div>
-				<div class="sign-up-htm">
-					<div class="group">
-						<input placeholder="Nombre de Usuario" id="user" type="text" class="input">
-					</div>
-
-					<div class="group">
-						<input placeholder="Email" id="pass" type="text" class="input">
-					</div>
-
-					<div class="group">
-						<input placeholder="Contraseña" id="pass" type="password" class="input" data-type="password">
-					</div>
-					<div class="group">
-						<input placeholder="Repetir Contraseña" id="pass" type="password" class="input" data-type="password">
-					</div>
-
-					<div class="group">
-						<input type="submit" class="button2" value="Registrarse">
-					</div>
-					<div class="hr"></div>
 			</div>
-		</div>
-	</div>
-</section>
+	</section>
 	<section class="content-block" style="background-color:#00bba7;">
 		<div class="container text-center">
 			<div class="row">
@@ -243,6 +233,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
 		crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 	<script src="./index.js"></script>
 </body>
 
