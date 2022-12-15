@@ -5,7 +5,7 @@ const carritoSinProductos = document.getElementById("carritoSinProductos");
 let botonEliminar = document.querySelectorAll(".eliminarProducto");
 const botonVaciar = document.querySelector("#empty-button");
 const contenedorTotal = document.getElementById("#totalFinal");
-const botonDeCompra = document.getElementById("#purchase-button")
+const botonDeCompra = document.getElementById("purchase-button")
 
 
 function productosSeleccionados() {
@@ -57,6 +57,7 @@ function eliminarDelCarrito(e) {
     const idBoton = e.currentTarget.id;
     const index = carritoDeCompras.findIndex(producto => producto.id === idBoton);
     carritoDeCompras.splice(index, 1)
+    window.location.href = "./checkout.html";
     productosSeleccionados()
     localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras))
 }
@@ -66,12 +67,27 @@ botonVaciar.addEventListener("click", vaciarCarrito)
 function vaciarCarrito() {
     carritoDeCompras.length = 0;
     localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
-    productosSeleccionados()
+      window.location.href = "./checkout.html";
+      productosSeleccionados()
+    
 }
 
 function actualizarTotal () {
     const totalCalculado = carritoDeCompras.reduce ((acc, producto) => acc + (producto.precio*producto.cantidad),0);
     totalFinal.innerText = `Total: uSd ${totalCalculado} `
 }
+
+botonDeCompra.addEventListener("click", graciasPorTuCompra)
+function graciasPorTuCompra () {
+    Swal.fire({
+        icon: 'success',
+        title: 'Gracias por tu compra!',
+        showConfirmButton: false,
+      })
+      
+}
+
+
+
 
 

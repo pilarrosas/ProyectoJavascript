@@ -1,3 +1,4 @@
+ 
 class celulares {
     constructor(id, modelo, color, cantidadCamara, memoria, precio, imagen) {
         this.id = id,
@@ -66,6 +67,10 @@ botonCompra.forEach(boton => {
         else {
             carritoDeCompras[indexCarrito].cantidad++
         }
+        Swal.fire ({
+            icon: 'success',
+            text: 'Producto Agregado!'
+        })
         actualizarNumerito() 
         localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
         console.log(carritoDeCompras)
@@ -79,8 +84,7 @@ miCarrito.onclick = () => {
     valor.forEach(valores => {
         totalCompra += valores
     })
-    console.log(totalCompra)
-    alert(valor)
+    
 }
 
 function actualizarNumerito() {
