@@ -57,7 +57,13 @@ function eliminarDelCarrito(e) {
     const idBoton = e.currentTarget.id;
     const index = carritoDeCompras.findIndex(producto => producto.id === idBoton);
     carritoDeCompras.splice(index, 1)
-    window.location.href = "./checkout.html";
+    Swal.fire ({
+        icon: 'success',
+        text: 'Elimiaste este Producto'
+    })
+    setTimeout(() => {
+        window.location.href = "./checkout.html";
+    }, 3000);
     productosSeleccionados()
     localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras))
 }
@@ -67,7 +73,14 @@ botonVaciar.addEventListener("click", vaciarCarrito)
 function vaciarCarrito() {
     carritoDeCompras.length = 0;
     localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
-      window.location.href = "./checkout.html";
+    Swal.fire ({
+        icon: 'success',
+        text: 'Vaciaste tu Carrito de Compras'
+    })
+    setTimeout(() => {
+        window.location.href = "./checkout.html";
+    }, 3000);
+      
       productosSeleccionados()
     
 }
